@@ -19,11 +19,4 @@ export const searchMovies = async ({ search }) => {
     throw new Error('Error searching movies')
   }
 
-  if (search) {
-    return fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`)
-      .then(response => response.json())
-      .then(data => setResponseMovies(data))
-  } else {
-    setResponseMovies(withoutResults)
-  }
 }
